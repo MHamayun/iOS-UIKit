@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>AgoraConnectionData Structure Reference</title>
+    <title>AgoraCollectionItem Class Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -13,8 +13,8 @@
     <script src="../js/jazzy.search.js" defer></script>
   </head>
   <body>
-    <a name="//apple_ref/swift/Struct/AgoraConnectionData" class="dashAnchor"></a>
-    <a title="AgoraConnectionData Structure Reference"></a>
+    <a name="//apple_ref/swift/Class/AgoraCollectionItem" class="dashAnchor"></a>
+    <a title="AgoraCollectionItem Class Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">AgoraUIKit_iOS 1.4.2 Docs</a> (100% documented)</p>
@@ -29,7 +29,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">AgoraUIKit_iOS Reference</a>
         <img id="carat" src="../img/carat.png" />
-        AgoraConnectionData Structure Reference
+        AgoraCollectionItem Class Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -97,15 +97,15 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>AgoraConnectionData</h1>
+            <h1>AgoraCollectionItem</h1>
               <div class="declaration">
                 <div class="language">
                   
-                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">AgoraConnectionData</span></code></pre>
+                  <pre class="highlight swift"><code><span class="kd">open</span> <span class="kd">class</span> <span class="kt">AgoraCollectionItem</span> <span class="p">:</span> <span class="kt">MPCollectionViewCell</span></code></pre>
 
                 </div>
               </div>
-            <p>Storing struct for holding data about the connection to Agora service</p>
+            <p>Item in the collection view to contain the user&rsquo;s video feed, as well as microphone signal.</p>
 
           </section>
           <section class="section task-group-section">
@@ -114,9 +114,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14AgoraUIKit_iOS0A14ConnectionDataV5appId0F5TokenACSS_SSSgtcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(appId:appToken:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14AgoraUIKit_iOS0A14ConnectionDataV5appId0F5TokenACSS_SSSgtcfc">init(appId:<wbr>appToken:<wbr>)</a>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Property/backgroundIcon" class="dashAnchor"></a>
+                    <a class="token" href="#/">backgroundIcon</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -124,14 +124,33 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Create AgoraConnectionData object</p>
+                        <p>Icon to be displayed when the user is taken to the main view</p>
+
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@AgoraUIKit_iOS@objc(cs)AgoraCollectionItem(im)initWithCoder:"></a>
+                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@AgoraUIKit_iOS@objc(cs)AgoraCollectionItem(im)initWithCoder:">init(coder:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Create view from NSCoder, not yet implemented.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">appId</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">appToken</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">)</span></code></pre>
+                          <pre class="highlight swift"><code><span class="kd">required</span> <span class="kd">public</span> <span class="nf">init</span><span class="p">?(</span><span class="nv">coder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -142,29 +161,53 @@
                             <tr>
                               <td>
                                 <code>
-                                <em>appId</em>
+                                <em>coder</em>
                                 </code>
                               </td>
                               <td>
                                 <div>
-                                  <p>Agora App ID from <a href="https://agora.io">https://agora.io</a></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>appToken</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>Token to be used to connect to a channel, can be nil.</p>
+                                  <p>NSCoder to build the view from</p>
                                 </div>
                               </td>
                             </tr>
                           </tbody>
                         </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/loadView()" class="dashAnchor"></a>
+                    <a class="token" href="#/">loadView()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/"></a>
+                    <a name="//apple_ref/swift/Method/viewDidLoad()" class="dashAnchor"></a>
+                    <a class="token" href="#/">viewDidLoad()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
                       </div>
                     </section>
                   </div>
