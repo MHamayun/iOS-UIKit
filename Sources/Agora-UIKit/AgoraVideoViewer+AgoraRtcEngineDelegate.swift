@@ -76,6 +76,8 @@ extension AgoraVideoViewer: AgoraRtcEngineDelegate {
         )
     }
 
+
+
     /**
      Occurs when a remote user (Communication)/host (Live Broadcast) leaves a channel. Same as userOfflineBlock.
 
