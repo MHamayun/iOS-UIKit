@@ -105,7 +105,13 @@ public struct AgoraSettings {
     }
 
     /// External video source settings parameters
-    public var externalVideoSource: ExternalVideoSettings = .allFalse
+    public var externalVideoSettings: ExternalVideoSettings = .allFalse
+
+    @available(*, deprecated, renamed: "externalVideoSettings")
+    public var externalVideoSource: ExternalVideoSettings {
+        get { self.externalVideoSettings }
+        set { self.externalVideoSettings = newValue }
+    }
 
     /// Whether to show your own camera feed
     public var showSelf: Bool = true
