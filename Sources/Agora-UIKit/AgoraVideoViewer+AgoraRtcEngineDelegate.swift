@@ -174,16 +174,6 @@ extension AgoraVideoViewer: AgoraRtcEngineDelegate {
         self.delegate?.joinedChannel(channel: channel)
     }
 
-    open func rtcEngine(
-        _ engine: AgoraRtcEngineKit, didJoinChannel channel: String,
-        withUid uid: UInt, elapsed: Int
-    ) {
-        self.userID = uid
-        if self.userRole == .broadcaster { self.addLocalVideo() }
-        self.setupRtmController(joining: channel)
-        self.delegate?.joinedChannel(channel: channel)
-    }
-
     /**
      Occurs when the local video stream state changes.
      The SDK reports the current video state in this callback.
@@ -204,7 +194,7 @@ extension AgoraVideoViewer: AgoraRtcEngineDelegate {
         default:
             break
         }
-        self.agSettings.rtcDelegate?.rtcEngine?(engine, localVideoStateChange: state, error: error)
+        self.agSettings.rtcDelegate?.rtcEngine?(engine, localVideoStateChangedOf: state, error: error)
     }
 
     /**
@@ -229,7 +219,7 @@ extension AgoraVideoViewer: AgoraRtcEngineDelegate {
         default:
             break
         }
-        self.agSettings.rtcDelegate?.rtcEngine?(engine, localAudioStateChange: state, error: error)
+        self.agSettings.rtcDelegate?.rtcEngine?(engine, localAudioStateChanged: state, error: error)
     }
 
     /**
